@@ -1,0 +1,52 @@
+---
+title: How numbers are drawn
+description: How a Kaktovik digit shows its own value, places in base 20, and how this library draws fractions and negatives.
+---
+
+import { Aside } from '@astrojs/starlight/components';
+import Glyph from '../../components/Glyph.astro';
+import DigitChart from '../../components/DigitChart.astro';
+
+Iñupiaq, the language of Alaska's North Slope, counts in twenties, with steps at five, ten and fifteen. In 1994, students at the middle school in Kaktovik, Alaska, invented digits to match. They are among the newest numeral systems in use, and Unicode added them in 2022.
+
+## Digits that show their value
+
+Each digit is built from what it counts:
+
+- **Units**, one to four, are a zigzag of that many strokes in the lower part of the digit.
+- **Fives**, one to three, are the same zigzag turned a quarter turn and laid across the top. Five is a rising stroke and ten a ">".
+- **Zero** looks like crossed arms: nothing is being counted.
+
+<DigitChart />
+
+So 19 is three fives across the top and four units below. Adding and subtracting can be done by adding and removing strokes.
+
+<Aside>
+  These digits are drawn from that construction rather than traced from a font, so stroke details
+  differ from the Unicode reference glyphs (U+1D2C0–1D2D3).
+</Aside>
+
+## Places
+
+Places run left to right, most significant first, each worth twenty times the next: 20 is 1 then 0, and 400 is 1, 0, 0.
+
+<div class="row">
+  <Glyph value={20} caption="20" />
+  <Glyph value={400} caption="400" />
+  <Glyph value={1993} caption="1993 = 4, 19, 13" />
+  <Glyph value={2026} caption="2026 = 5, 1, 6" />
+</div>
+
+## Fractions and negatives
+
+This library continues fractions in base 20 after a dot on the baseline: 0.5 is ten twentieths. Every decimal fraction is exact in base 20. Negative numbers start with a minus sign.
+
+<div class="row">
+  <Glyph value="0.5" caption="0.5" />
+  <Glyph value="12.25" caption="12.25" />
+  <Glyph value={-42} caption="-42" />
+</div>
+
+<style>{`
+  .row { display: flex; flex-wrap: wrap; gap: 2rem; align-items: end; margin-block: 1.5rem; }
+`}</style>

@@ -1,0 +1,56 @@
+---
+title: Kaktovik Numerals
+description: Render any number as Kaktovik numerals in SVG, PNG, JPEG or WebP, from code or the command line.
+template: splash
+hero:
+  tagline: >-
+    Draw any number in the base-20 digits Iñupiaq students in Kaktovik, Alaska, invented in 1994: fives on top, units below. SVG with zero dependencies, plus PNG, JPEG and WebP.
+  actions:
+    - text: Open the playground
+      link: /kaktovik-numerals/playground/
+      icon: pencil
+    - text: Get started
+      link: /kaktovik-numerals/getting-started/
+      icon: right-arrow
+      variant: secondary
+    - text: GitHub
+      link: https://github.com/karlnorling/kaktovik-numerals
+      icon: github
+      variant: minimal
+---
+
+import { Card, CardGrid } from '@astrojs/starlight/components';
+import Glyph from '../../components/Glyph.astro';
+import ColourExamples from '../../components/ColourExamples.astro';
+
+<div class="examples">
+  <Glyph value={1993} caption="1993" />
+  <Glyph value={19} caption="19" />
+  <Glyph value={400} caption="400" />
+  <Glyph value={'0.5'} caption="0.5" />
+  <Glyph value={-42} caption="-42" />
+</div>
+
+<ColourExamples />
+
+<CardGrid>
+  <Card title="Try any number" icon="pencil">
+    The [playground](/kaktovik-numerals/playground/) draws whatever you type, breaks it into base-20
+    digits, and lets you download SVG, PNG, JPEG or WebP.
+  </Card>
+  <Card title="Fractions and negatives" icon="add-document">
+    Fractions continue after a dot in base 20, exactly, and negatives get a minus sign. [See
+    how](/kaktovik-numerals/how-it-works/).
+  </Card>
+  <Card title="Zero dependencies" icon="seti:svg">
+    `@kaktovik-numerals/core` turns a number into an SVG string in any JavaScript runtime.
+  </Card>
+  <Card title="Images and CLI" icon="seti:image">
+    `@kaktovik-numerals/raster` renders PNG, JPEG and WebP with sharp, and `@kaktovik-numerals/cli`
+    does it from the terminal.
+  </Card>
+</CardGrid>
+
+<style>{`
+  .examples { display: flex; flex-wrap: wrap; justify-content: center; align-items: end; gap: 2rem; margin-block: 1rem 2.5rem; }
+`}</style>

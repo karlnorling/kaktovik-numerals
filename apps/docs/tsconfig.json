@@ -1,0 +1,8 @@
+{
+  "extends": "astro/tsconfigs/strict",
+  "compilerOptions": {
+    "paths": {
+      "@kaktovik-numerals/core": ["../../packages/@kaktovik-numerals/core/src/index.ts"]
+    }
+  }
+}
