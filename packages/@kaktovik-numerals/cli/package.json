@@ -1,6 +1,6 @@
 {
   "name": "@kaktovik-numerals/cli",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Draw Kaktovik numerals from the command line: SVG, PNG, JPEG or WebP",
   "keywords": [
     "alaska",

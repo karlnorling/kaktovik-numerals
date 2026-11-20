@@ -1,6 +1,6 @@
 {
   "name": "@kaktovik-numerals/core",
-  "version": "0.0.0",
+  "version": "0.1.0",
   "description": "Render any number as Kaktovik numerals in SVG, with zero dependencies",
   "keywords": [
     "alaska",
